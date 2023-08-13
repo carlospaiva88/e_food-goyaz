@@ -1,3 +1,5 @@
-const Button = () => <button> Saiba mais</button>
+import { Button } from "./styles"
 
-export default Button
+const Buttons = () => <Button> Saiba mais</Button>
+
+export default Buttons

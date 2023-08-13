@@ -1,16 +1,19 @@
-import Header from './Components/Header'
-import List from './Components/List'
+import { BrowserRouter } from 'react-router-dom'
+import Footer from './Footer'
 import GlobalStyle from './styles'
+import { RouteS } from './routes'
+
 
 function App() {
   return (
     <>
+    <BrowserRouter>
       <GlobalStyle />
-      <div className="container">
-        <Header />
-      </div>
-      <List />
+      <RouteS />
+      <Footer />
+    </BrowserRouter>
     </>
+
   )
 }
 

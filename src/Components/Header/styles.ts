@@ -1,26 +1,40 @@
 import styled from 'styled-components'
 import imgBanner from '../../assets/images/fundo.png'
+import { colors } from '../../styles'
 
-export const ContainerHome = styled.div`
-  max-width: 1366px;
-  width: 100%;
+export const TitleHero = styled.p`
+  width: 539px;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  font-family: Roboto;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: ${colors.red};
+
+  @media screen and (max-width:414px) {
+    font-size: 22px;
+    line-height: 21px;
+    width: 250px;
+  }
+
 `
 export const Hero = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  background-image: url(${imgBanner});
   color: #ffebd9;
-  width: 100%;
-`
-export const TitleHero = styled.p`
-  font-family: Roboto;
-  font-size: 32px;
-  font-weight: 900;
-  line-height: 42px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #e66767;
+  background-image: url(${imgBanner});
+
+  div {
+    margin-top: 44px;
+  }
+  @media screen and (min-width:375px) {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
 `
