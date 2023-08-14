@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto Serif', serif;
     list-style: none;
     text-decoration: none;
-    overflow: hidden;
+    // overflow: hidden;
   }
   body {
     background-color: #ebebeb;

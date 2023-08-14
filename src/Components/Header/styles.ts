@@ -29,6 +29,10 @@ export const Hero = styled.header`
   color: #ffebd9;
   background-image: url(${imgBanner});
 
+  ${imgBanner} {
+    width: 100%;
+  }
+
   div {
     margin-top: 44px;
   }
