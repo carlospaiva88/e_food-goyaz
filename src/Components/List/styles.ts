@@ -5,10 +5,17 @@ export const CardList = styled.ul`
 
   @media screen and (max-width:414px) {
     display: block;
-    width: 100%;
     margin: 0 auto;
   }
-  @media screen and (min-width:767px) {
+  @media screen and (min-width:768px) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    grid-column-gap: 15px;
+    grid-row-gap: 1em;
+  }
+  @media screen and (min-width:1024px) {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -18,7 +25,6 @@ export const CardList = styled.ul`
   }
 
 
-
 `
 export const Card = styled.li`
   width: 100%;
@@ -26,7 +32,7 @@ export const Card = styled.li`
   border: 1px solid ;
   position: relative;
 
-  @media screen and (min-width:375px) {
+  @media screen and (min-width:280px) {
     display: block;
     width: 300px;
     margin: 0 auto;

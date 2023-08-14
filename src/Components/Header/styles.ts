@@ -14,7 +14,7 @@ export const TitleHero = styled.p`
   text-align: center;
   color: ${colors.red};
 
-  @media screen and (max-width:414px) {
+  @media screen and (max-width:428px) {
     font-size: 22px;
     line-height: 21px;
     width: 250px;
@@ -32,7 +32,7 @@ export const Hero = styled.header`
   div {
     margin-top: 44px;
   }
-  @media screen and (min-width:375px) {
+  @media screen and (min-width:280px) {
     width: 100%;
     margin-bottom: 40px;
 }
