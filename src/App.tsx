@@ -3,7 +3,6 @@ import Footer from './Footer'
 import GlobalStyle from './styles'
 import { RouteS } from './routes'
 
-
 function App() {
   return (
     <>

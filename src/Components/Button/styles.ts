@@ -17,3 +17,11 @@ export const Button = styled.button`
   text-align: center;
 
 `
+export const ButtonLight = styled(Button)`
+  background-color: ${colors.white};
+  color: ${colors.red};
+  display: block;
+  width: 95%;
+
+
+`

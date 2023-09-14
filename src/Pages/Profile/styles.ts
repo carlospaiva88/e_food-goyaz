@@ -96,62 +96,9 @@ export const Banner = styled.div`
     }
   }
 `
-export const ProfileCardList = styled.ul`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  grid-column-gap: 15px;
-  grid-row-gap: 1em;
-  padding: 100px;
 
-  @media screen and (max-width:540px) {
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-  }
-  @media screen and (min-width:767px) and (max-width:1024px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    grid-column-gap: 5px;
-    grid-row-gap: 1em;
-  }
 
-`
-export const ProfileCard = styled.li`
-  width: 320px;
-  background-color: ${colors.red};
-  color: ${colors.white};
 
-  img {
-    margin: 8px;
-  }
-  h2 {
-    color: ${colors.lightGray};
-    margin-left: 8px;
-
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 900;
-  }
-  p {
-    margin: 8px;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-  }
-
-  @media screen and (max-width:540px) {
-    width: 334px;
-    margin-bottom: 20px;
-    margin: 30px auto;
-  }
-  @media screen and (max-width:820px) {
-    margin: 30px auto;
-  }
-`
 export const ProfileButton = styled(Button)`
   background-color: ${colors.lightGray};
   color: ${colors.red};
