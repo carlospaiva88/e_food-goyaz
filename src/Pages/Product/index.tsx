@@ -1,7 +1,6 @@
 import Modal from "../../Components/Box"
 import { ContainerProduct, ProfileCard, ProfileCardList } from './styles'
 import { useEffect, useState } from "react"
-import { pizzariaData } from "./Pizzaria";
 
 export interface Restaurant {
     nome: string;

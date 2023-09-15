@@ -32,6 +32,13 @@ export const Card = styled.li`
   border: 1px solid ;
   position: relative;
 
+  span {
+    position: absolute;
+    top: 0px;
+    right: 100px;
+    width: 100%;
+  }
+
   @media screen and (min-width:280px) {
     display: block;
     width: 300px;
@@ -41,13 +48,6 @@ export const Card = styled.li`
     img{
       width: 100%;
     }
-  }
-
-  span {
-    position: absolute;
-    top: 0px;
-    right: 100px;
-    width: 100%;
   }
 `
 export const TitleCard = styled.div`

@@ -2,33 +2,36 @@ import styled from "styled-components";
 import { colors } from "../../styles";
 
 export const ProfileCardList = styled.ul`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-column-gap: 10px;
-grid-row-gap: 2em;
-
-
-  @media screen and (max-width:540px) {
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-  }
-  @media screen and (min-width:767px) and (max-width:1024px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    grid-column-gap: 5px;
-    grid-row-gap: 1em;
-  }
+@media screen and (max-width:414px) {
+  display: block;
+  margin: 0 auto;
+}
+@media screen and (min-width:768px) {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  grid-column-gap: 15px;
+  grid-row-gap: 1em;
+}
+@media screen and (min-width:1024px) {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  grid-column-gap: 15px;
+  grid-row-gap: 1em;
+}
 
 `
 export const ProfileCard = styled.li`
   background-color: ${colors.red};
   color: ${colors.white};
+  margin: 5px;
 
   img {
-    width: 350px;
-    height: 240px;
+    width: 100%;
+    height: 200px;
     padding: 10px;
     object-fit: cover;
   }
@@ -47,23 +50,18 @@ export const ProfileCard = styled.li`
     font-weight: 400;
     line-height: 22px;
   }
+  @media screen and (min-width:280px) {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 30px;
 
-  @media screen and (max-width:540px) {
-    width: 324px;
-    margin-bottom: 20px;
-    margin: 30px auto;
+    img{
+      width: 100%;
+    }
   }
-  @media screen and (max-width:820px) {
-    margin: 30px auto;
-  }
+
 `
 export const ContainerProduct = styled.div`
-  max-width: 1024px;
-  height: 708px;
-  margin-left: 170px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
 
 `

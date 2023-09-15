@@ -1,8 +1,6 @@
-import { PropsWithChildren, useState, useRef, useEffect } from "react"
+import { PropsWithChildren, useState, useEffect } from "react"
 import { ModalContent, ModalOverlay} from "./styles"
-import marguerita from '../../assets/images/marguerita.png'
 import { ButtonLight } from "../Button/styles"
-import { pizzariaData } from "../../Pages/Product/Pizzaria"
 
 interface ModalProps {
   capa: string

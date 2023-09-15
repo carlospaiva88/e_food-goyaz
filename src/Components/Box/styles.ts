@@ -9,9 +9,6 @@ export const ModalContent = styled.div`
   padding: 30px;
   border-radius: 5px;
 
-    div {
-      padding: 10px;
-    }
 
     p {
       font-weight: 400;
@@ -23,14 +20,23 @@ export const ModalContent = styled.div`
       font-weight: 900;
     }
     img {
-      object-fit: fill;
-
+      object-fit: cover;
     }
     span {
       position: relative;
       top: -25px;
-      left: 1164px;
+      left: 1140px;
       cursor: pointer;
+    }
+
+    @media screen and (max-width:428px) {
+      display: block;
+
+      span {
+        position: relative;
+        top: -20px;
+        left: 300px;
+      }
     }
 
 
