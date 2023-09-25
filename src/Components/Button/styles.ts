@@ -24,5 +24,6 @@ export const ButtonLight = styled(Button)`
   background-color: ${colors.white};
   color: ${colors.red};
   width: 304px;
-  margin: 5px;
+  height: 24px;
+  padding: 5px;
 `

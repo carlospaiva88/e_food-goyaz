@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 
 export const ModalContent = styled.div`
   width: 1024px;
@@ -30,8 +30,17 @@ export const ModalContent = styled.div`
       top: -20px;
       left: 960px;
       cursor: pointer;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        top: -280px;
+        left: 333px;
+      }
     }
 
+    @media (max-width: ${breakpoints.tablet}) {
+      display: block;
+      height: auto;
+    }
 
 
 `

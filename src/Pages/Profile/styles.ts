@@ -14,11 +14,13 @@ export const Hero = styled.header`
 
 
   @media (max-width: ${breakpoints.tablet}) {
-   padding: 20px;
     img {
       margin: 10px;
     }
   }
+  @media (max-width: ${breakpoints.desktop}) {
+    padding: 30px;
+   }
 `
 export const ProfileTitle = styled.h1`
   font-family: Roboto;
@@ -72,13 +74,16 @@ export const Banner = styled.div`
 
 
     @media (max-width: ${breakpoints.desktop}) {
-      top: 90px;
+      right: 188px;
+      bottom: 0px;
+      top: 50px;
     }
 
     @media (max-width: ${breakpoints.tablet}) {
-      font-size: 18px;
+      font-size: 16px;
       top: -20px;
-      right: 100px;
+      right: 120px;
+
     }
   }
 
@@ -91,4 +96,7 @@ export const ProfileButton = styled(Button)`
   color: ${colors.red};
   width: 304px;
 `
+export const ContainerProfile = styled.div`
 
+
+`

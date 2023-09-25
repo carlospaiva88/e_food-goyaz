@@ -1,4 +1,4 @@
-import { Banner, Hero, ProfileTitle} from "./styles"
+import { Banner, ContainerProfile, Hero, ProfileTitle} from "./styles"
 import logo from '../../assets/images/logo.jpg'
 import backgroundPasta from '../../assets/images/backgroundPasta.png'
 import { Link } from "react-router-dom"
@@ -9,7 +9,7 @@ import Product from "../Product"
 const Profile = () => {
   return (
     <>
-    <div>
+    <ContainerProfile>
           <Hero>
               <Link to='/'>
               <ProfileTitle>Restaurantes</ProfileTitle>
@@ -23,7 +23,7 @@ const Profile = () => {
             <h2>La Dolce Vitta Trattoria</h2>
           </Banner>
           <Product />
-    </div>
+    </ContainerProfile>
       </>
   )
 }

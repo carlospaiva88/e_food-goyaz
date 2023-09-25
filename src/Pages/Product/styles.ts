@@ -1,30 +1,28 @@
 import styled from "styled-components";
-import { colors } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 
 export const ProfileCardList = styled.ul`
-@media screen and (max-width:414px) {
-  display: block;
-  margin: 0 auto;
-}
-@media screen and (min-width:768px) {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  grid-column-gap: 15px;
-  grid-row-gap: 1em;
-}
-@media screen and (min-width:1024px) {
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  grid-column-gap: 15px;
-  grid-row-gap: 1em;
-}
+  gap: 80px;
+  margin: 50px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    margin: 10px;
+    gap: 20px;
+  }
 
 `
 export const ProfileCard = styled.li`
+  width: 320px;
+  height: auto;
   background-color: ${colors.red};
   color: ${colors.white};
   margin: 5px;
@@ -50,18 +48,18 @@ export const ProfileCard = styled.li`
     font-weight: 400;
     line-height: 22px;
   }
-  @media screen and (min-width:280px) {
-    display: block;
-    width: 300px;
-    margin: 0 auto;
-    margin-bottom: 30px;
 
-    img{
-      width: 100%;
-    }
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 360px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 360px;
   }
 
 `
 export const ContainerProduct = styled.div`
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
