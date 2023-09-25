@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import imgBanner from '../assets/images/fundo.png'
-import { colors } from '../styles'
+import { breakpoints, colors } from '../styles'
 
 export const FooterR = styled.footer`
   display: flex;
@@ -11,10 +11,6 @@ export const FooterR = styled.footer`
   color: ${colors.lightGray};
   padding: 60px;
 
-  @media (max-width: 768px){
-    padding: 40px;
-    margin-top: 40px;
-}
 
   p {
     font-family: Roboto;
@@ -25,9 +21,8 @@ export const FooterR = styled.footer`
     text-align: center;
     color: ${colors.red};
     margin: 40px;
-    @media (max-width: 768px){
-      font-size: 12px;
-  }
+
+
   }
 `
 export const Icons = styled.div`
@@ -38,6 +33,4 @@ export const Icons = styled.div`
   div {
     margin-right: 5px;
   }
-
-
   `

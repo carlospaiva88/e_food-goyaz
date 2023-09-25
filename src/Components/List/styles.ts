@@ -1,36 +1,33 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const CardList = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin: 80px;
 
-  @media screen and (max-width:414px) {
-    display: block;
-    margin: 0 auto;
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-  @media screen and (min-width:768px) {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    grid-column-gap: 15px;
-    grid-row-gap: 1em;
-  }
-  @media screen and (min-width:1024px) {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    grid-column-gap: 15px;
-    grid-row-gap: 1em;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
 
 `
 export const Card = styled.li`
-  width: 100%;
   background: ${colors.white};
   border: 1px solid ;
   position: relative;
+  width: 472px;
+  height: 398px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   span {
     position: absolute;
@@ -39,15 +36,13 @@ export const Card = styled.li`
     width: 100%;
   }
 
-  @media screen and (min-width:280px) {
-    display: block;
-    width: 300px;
-    margin: 0 auto;
-    margin-bottom: 30px;
+  img {
+    width: 100%;
+  }
 
-    img{
-      width: 100%;
-    }
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 328px;
+    height: auto;
   }
 `
 export const TitleCard = styled.div`
@@ -58,11 +53,7 @@ export const TitleCard = styled.div`
   font-family: Roboto;
   font-size: 18px;
   font-weight: 700;
-  line-height: 21px;
-  letter-spacing: 0em;
-  text-align: center;
   margin-top: 4px;
-  margin-bottom: 20px;
   margin-left: 8px;
 
   div {
@@ -73,33 +64,20 @@ export const TitleCard = styled.div`
       margin-right: 6px;
       margin-bottom: 1px;
       color: ${colors.red};
-
-      @media screen and (min-width:375px) {
-        margin-top: 6px;
-      }
     }
   }
-  @media screen and (min-width:375px) {
-    font-size: 12px;
-    line-height: 7px;
-    margin: 0 auto;
-    h2 {
-      margin-left: 5px;
-    }
-  }
-
-
 `
 export const TextCard = styled.p`
   font-family: Roboto;
   font-size: 18px;
   font-weight: 500;
-  line-height: 21px;
-  letter-spacing: 0em;
-  text-align: left;
   color: ${colors.red};
-  margin-bottom: 18px;
-  margin: 8px;
+  margin: 5px;
+`
+export const ContainerCard = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
 `

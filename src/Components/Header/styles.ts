@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import imgBanner from '../../assets/images/fundo.png'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const TitleHero = styled.p`
   width: 539px;
@@ -14,10 +14,10 @@ export const TitleHero = styled.p`
   text-align: center;
   color: ${colors.red};
 
-  @media screen and (max-width:428px) {
-    font-size: 22px;
-    line-height: 21px;
-    width: 250px;
+  @media (max-width: ${breakpoints.desktop})  {
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
   }
 
 `
@@ -36,9 +36,5 @@ export const Hero = styled.header`
   div {
     margin-top: 44px;
   }
-  @media screen and (min-width:280px) {
-    width: 100%;
-    margin-bottom: 40px;
-}
 
 `

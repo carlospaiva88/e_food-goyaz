@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import imgBanner from '../../assets/images/fundo.png'
 import { Button } from '../../Components/Button/styles'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Hero = styled.header`
   padding: 80px;
@@ -12,18 +12,13 @@ export const Hero = styled.header`
   background-image: url(${imgBanner});
   color: ${colors.lightGray};
 
-  @media screen and (max-width:540px) {
 
-    padding: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 auto;
-
+  @media (max-width: ${breakpoints.tablet}) {
+   padding: 20px;
     img {
-      margin: 15px;
+      margin: 10px;
     }
   }
-
 `
 export const ProfileTitle = styled.h1`
   font-family: Roboto;
@@ -34,21 +29,14 @@ export const ProfileTitle = styled.h1`
   text-align: center;
   color: ${colors.red};
 
-  @media screen and (max-width:540px) {
+  @media (max-width: ${breakpoints.tablet}) {
     font-size: 16px;
-    line-height: 14px;
-
   }
 
 `
 export const Banner = styled.div`
   position: relative;
   width: 100%;
-
-  @media screen and (max-width:540px) {
-    width: 100%;
-    margin-bottom: 20px;
-  }
 
   img {
     opacity: 0.83;
@@ -57,7 +45,10 @@ export const Banner = styled.div`
     @media screen and (max-width:540px) {
       width: 100%;
     }
-    @media screen and (min-width:767px) {
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 100%;
+    }
+    @media screen and (width:${breakpoints.tablet}) {
       width: 100%;
     }
   }
@@ -69,13 +60,8 @@ export const Banner = styled.div`
     margin: 25px 170px;
     color: ${colors.white};
     opacity: 0.38;
-
-    @media screen and (max-width:540px) {
-      font-size: 16px;
-      top: 0px;
-      margin: 10px 70px;
-    }
   }
+
   h2 {
     font-size: 32px;
     font-weight: 900;
@@ -84,17 +70,18 @@ export const Banner = styled.div`
     top: 170px;
     margin: 32px 170px;
 
-    @media screen and (max-width:540px){
-      font-size: 22px;
-      font-size: 18px;
-      font-weight: 400;
-      margin: 60px;
-      top: -13px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      top: 90px;
     }
-    @media screen and (min-width:767px) {
-      top: 85px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 18px;
+      top: -20px;
+      right: 100px;
     }
   }
+
 `
 
 

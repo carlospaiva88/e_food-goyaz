@@ -58,7 +58,7 @@ const ModalBox = (
                 <br />
                 Serve: { porcao }
             </p>
-            <button>Adicionar ao carrinho - R$ { preco }</button>
+            <ButtonLight>Adicionar ao carrinho - R$ { preco }</ButtonLight>
           </div>
         </ModalContent>
       </ModalOverlay>

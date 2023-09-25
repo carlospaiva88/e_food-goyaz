@@ -1,4 +1,4 @@
-import { Card, CardList, TextCard, TitleCard } from './styles'
+import { Card, CardList, ContainerCard, TextCard, TitleCard } from './styles'
 import sushi from '../../assets/images/sushi.png'
 import pasta from '../../assets/images/pasta.png'
 import star from '../../assets/images/favorite-star.png'
@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 
 const List = () => (
-  <div>
+  <ContainerCard>
     <CardList>
       <Card>
           <img src={sushi} alt="sushi" />
@@ -79,11 +79,11 @@ const List = () => (
         </div>
       </Card>
       <Card>
-        <div>
           <img src={sushi} alt="sushi" />
-          <span></span>
-          <span></span>
-        </div>
+            <span>
+              <Tag size='big'>Destaque da semana</Tag>
+            </span>
+            <Tag size='big'>Japonesa</Tag>
         <TitleCard>
           <h2>Hioiki Sushi</h2>
           <div>
@@ -102,7 +102,8 @@ const List = () => (
         </div>
       </Card>
     </CardList>
-  </div>
+  </ContainerCard>
 )
 
 export default List
+

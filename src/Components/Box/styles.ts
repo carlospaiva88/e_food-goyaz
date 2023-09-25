@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { colors } from "../../styles";
 
 export const ModalContent = styled.div`
-  width: 90%;
+  width: 1024px;
+  height: 344px;
   display: flex;
   background-color: ${colors.red};
   color: ${colors.white};
@@ -21,23 +22,16 @@ export const ModalContent = styled.div`
     }
     img {
       object-fit: cover;
+      width: 280px;
+      height: 280px;
     }
     span {
       position: relative;
-      top: -25px;
-      left: 1140px;
+      top: -20px;
+      left: 960px;
       cursor: pointer;
     }
 
-    @media screen and (max-width:428px) {
-      display: block;
-
-      span {
-        position: relative;
-        top: -20px;
-        left: 300px;
-      }
-    }
 
 
 `

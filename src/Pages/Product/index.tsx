@@ -18,6 +18,13 @@ const Product = () => {
     const [restaurantData, setRestaurantData] = useState<Array<Restaurant>>([])
     const [ isLoading, setIsLoading ] = useState<boolean>(true);
 
+  function limitWords(text: string, limit: number) {
+    const words = text.split(' ')
+    if(words.length > limit) {
+      return words.slice(0, limit).join(' ') + '...'
+    }
+    return text
+  }
 
     useEffect(() => {
         fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
@@ -46,9 +53,9 @@ const Product = () => {
                                 <ProfileCard key={item.id}>
                                     <img src={item.foto} alt={item.nome} />
                                     <h2>{item.nome}</h2>
-                                    <p>{item.descricao}</p>
-                                    <p>Preço: R${item.preco.toFixed(2)}</p>
-                                    <p>Porção: {item.porcao}</p>
+                                    <p>{limitWords(item.descricao, 20)}</p>
+                                    {/* <p>Preço: R${item.preco.toFixed(2)}</p> */}
+                                    {/* <p>Porção: {item.porcao}</p> */}
                                     <Modal
                                       capa={item.foto || ""}
                                       descricao={ item.descricao }

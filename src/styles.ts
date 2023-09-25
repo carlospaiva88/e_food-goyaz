@@ -5,6 +5,10 @@ export const colors = {
   white: '#FFFFFF',
   lightGray: '#FFEBD9',
 }
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -17,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     // overflow: hidden;
   }
   body {
-    background-color: #ebebeb;
+    background-color: #FFF8F2;
     max-width: 1366px;
   }
 `
