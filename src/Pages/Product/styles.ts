@@ -4,8 +4,11 @@ import { breakpoints, colors } from "../../styles";
 export const ProfileCardList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 80px;
-  margin: 50px;
+  margin-bottom: 120px;
+  margin:top: 56px;
+  gap: 32px;
+
+
 
   @media (max-width: ${breakpoints.desktop}) {
     grid-template-columns: 1fr 1fr;
@@ -55,6 +58,7 @@ export const ProfileCard = styled.li`
 
   @media (max-width: ${breakpoints.tablet}) {
     height: 360px;
+
   }
 
 `
@@ -62,4 +66,6 @@ export const ContainerProduct = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+
 `

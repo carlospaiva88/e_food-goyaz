@@ -22,6 +22,7 @@ export const TitleHero = styled.p`
 
 `
 export const Hero = styled.header`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,8 +30,9 @@ export const Hero = styled.header`
   color: #ffebd9;
   background-image: url(${imgBanner});
 
+
   ${imgBanner} {
-    width: 100%;
+    width: 100px;
   }
 
   div {

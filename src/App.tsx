@@ -8,8 +8,11 @@ function App() {
     <>
     <BrowserRouter>
       <GlobalStyle />
-      <RouteS />
+      <div className='container'>
+          <RouteS />
+      </div>
       <Footer />
+
     </BrowserRouter>
     </>
 

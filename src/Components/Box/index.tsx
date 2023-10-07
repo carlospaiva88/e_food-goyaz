@@ -1,6 +1,6 @@
 import { PropsWithChildren, useState, useEffect } from "react"
 import { ModalContent, ModalOverlay} from "./styles"
-import { ButtonLight } from "../Button/styles"
+import { ButtonLight, ButtonModal } from "../Button/styles"
 
 interface ModalProps {
   capa: string
@@ -58,7 +58,7 @@ const ModalBox = (
                 <br />
                 Serve: { porcao }
             </p>
-            <ButtonLight>Adicionar ao carrinho - R$ { preco }</ButtonLight>
+            <ButtonModal>Adicionar ao carrinho - R$ { preco }</ButtonModal>
           </div>
         </ModalContent>
       </ModalOverlay>

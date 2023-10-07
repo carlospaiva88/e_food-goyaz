@@ -7,8 +7,8 @@ export const RouteS = () => (
   <Routes>
 
     <Route path='/' element={<Home />}></Route>
-    <Route path='/profile' element={<Profile />}></Route>
-    <Route path='/product/:id' element={<Product />}></Route>
+    <Route path='/profile/:id' element={<Profile profile={null} />}></Route>
+    <Route path='/product/:id' element={<Product profile={null} />}></Route>
 
   </Routes>
 )

@@ -12,18 +12,20 @@ export const ModalContent = styled.div`
 
 
     p {
+      font-family: Roboto;
       font-weight: 400;
       font-size: 14px;
-      line-height: 22px;
+      line-height: 21px;
     }
     h2 {
+      font-family: Roboto;
       font-size: 18px;
       font-weight: 900;
     }
     img {
       object-fit: cover;
-      width: 280px;
-      height: 280px;
+      max-width: 280px;
+      max-height: 280px;
     }
     span {
       position: relative;

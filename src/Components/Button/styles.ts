@@ -12,6 +12,7 @@ export const Button = styled.button`
   line-height: 16px;
   text-align: center;
   width: 82px;
+  height:24px;
   margin: 8px;
   padding: 2px;
   margin-top: auto;
@@ -26,4 +27,21 @@ export const ButtonLight = styled(Button)`
   width: 304px;
   height: 24px;
   padding: 5px;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+`
+export const ButtonModal = styled(Button)`
+  background-color: ${colors.white};
+  color: ${colors.red};
+  width: 218px;
+  height: 24px;
+  padding: 5px;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
 `

@@ -25,9 +25,9 @@ export const Card = styled.li`
   position: relative;
   width: 472px;
   height: 398px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 217px auto minmax(0, 1fr);
+  overflow: hidden;
 
   span {
     position: absolute;
@@ -36,10 +36,16 @@ export const Card = styled.li`
     width: 100%;
   }
 
-  img {
+  > img {
     width: 100%;
+    height: 217px;
   }
-
+  h2 {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+  }
   @media (max-width: ${breakpoints.tablet}) {
     width: 328px;
     height: auto;
@@ -50,7 +56,7 @@ export const TitleCard = styled.div`
   justify-content: space-between;
   align-items: center;
   color: ${colors.red};
-  font-family: Roboto;
+
   font-size: 18px;
   font-weight: 700;
   margin-top: 4px;
@@ -69,8 +75,9 @@ export const TitleCard = styled.div`
 `
 export const TextCard = styled.p`
   font-family: Roboto;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
   color: ${colors.red};
   margin: 5px;
 `
@@ -79,5 +86,14 @@ export const ContainerCard = styled.div`
   justify-content: center;
   align-items: center;
 
-
+`
+export const DetailsContainer = styled.div`
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 `

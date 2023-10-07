@@ -1,8 +1,9 @@
 import Modal from "../../Components/Box"
+import { RestaurantType } from "../../Components/List";
 import { ContainerProduct, ProfileCard, ProfileCardList } from './styles'
 import { useEffect, useState } from "react"
 
-export interface Restaurant {
+export interface MenuType {
     nome: string;
     foto: string | undefined;
     tipo: string;
@@ -14,8 +15,16 @@ export interface Restaurant {
     porcao: string;
 }
 
-const Product = () => {
-    const [restaurantData, setRestaurantData] = useState<Array<Restaurant>>([])
+export interface ProductProps {
+  profile: RestaurantType | null
+}
+export interface HeroProps {
+  profile: RestaurantType | null
+}
+
+
+const Product: React.FC<ProductProps> = ({ profile }) => {
+    const [restaurantData, setRestaurantData] = useState<Array<MenuType>>([])
     const [ isLoading, setIsLoading ] = useState<boolean>(true);
 
   function limitWords(text: string, limit: number) {
@@ -27,19 +36,22 @@ const Product = () => {
   }
 
     useEffect(() => {
-        fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
+      if (profile) {
+     fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${profile.id}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log("OS DADOS VIERAM", data[4].cardapio)
+                console.log("OS DADOS VIERAM", data.cardapio)
                 setTimeout(() => {
-                  setRestaurantData(data[4].cardapio)
+                  setRestaurantData(data.cardapio)
                   setIsLoading(false)
                 }, 0)
             })
-        .catch((error) => {
+            .catch((error) => {
             console.error('Erro ao buscar dados da API', error)
         })
-    }, [])
+      }
+
+    }, [profile])
     // const pizzarias = restaurantData.filter((restaurant) => restaurant.tipo === 'pizzaria');
     return (
         <>

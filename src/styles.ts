@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
   red: '#E66767',
@@ -24,10 +24,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: #FFF8F2;
     max-width: 1366px;
   }
-`
-export const ContainerHome = styled.div`
-  width: 100%;
 
+  .container {
+    max-width: 1366px;
+    width: 100%;
+    margin: 0 auto;
+  }
 `
+
 
 export default GlobalStyle

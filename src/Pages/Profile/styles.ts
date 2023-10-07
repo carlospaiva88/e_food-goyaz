@@ -37,31 +37,49 @@ export const ProfileTitle = styled.h1`
 
 `
 export const Banner = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
   position: relative;
-  width: 100%;
+  margin-bottom: 56px;
+
 
   img {
     opacity: 0.83;
     filter: brightness(0.45);
+    max-width: 1366px;
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
 
-    @media screen and (max-width:540px) {
+    @media (max-width: ${breakpoints.tablet}) {
       width: 100%;
-    }
-    @media (max-width: ${breakpoints.desktop}) {
-      width: 100%;
-    }
-    @media screen and (width:${breakpoints.tablet}) {
-      width: 100%;
+      height: 140px;
     }
   }
+
   h1 {
     font-size: 32px;
     font-weight: 100;
     position: absolute;
-    top: 0;
-    margin: 25px 170px;
+    margin-bottom: 221px;
+    margin-left: 170px;
+    margin-top: 25px;
     color: ${colors.white};
     opacity: 0.38;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      margin-left: 170px;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-left: 50px;
+      font-size: 18px;
+      top: 0;
+    }
+
   }
 
   h2 {
@@ -69,22 +87,21 @@ export const Banner = styled.div`
     font-weight: 900;
     color: ${colors.white};
     position: absolute;
-    top: 170px;
-    margin: 32px 170px;
-
+    margin-top: 221px;
+    margin-left: 170px;
+    margin-bottom: 88px;
 
     @media (max-width: ${breakpoints.desktop}) {
-      right: 188px;
-      bottom: 0px;
-      top: 50px;
+      margin-left: 170px;
     }
 
     @media (max-width: ${breakpoints.tablet}) {
+      margin: 0 auto;
       font-size: 16px;
-      top: -20px;
-      right: 120px;
-
+      bottom: 25px;
+      margin-left: 50px;
     }
+
   }
 
 `
@@ -95,8 +112,4 @@ export const ProfileButton = styled(Button)`
   background-color: ${colors.lightGray};
   color: ${colors.red};
   width: 304px;
-`
-export const ContainerProfile = styled.div`
-
-
 `
