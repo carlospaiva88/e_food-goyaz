@@ -7,12 +7,13 @@ export interface MenuType {
     nome: string;
     foto: string | undefined;
     tipo: string;
-    id: number;
+    id: number | string;
     capa: string;
     titulo: string;
     descricao: string;
     preco: number;
     porcao: string;
+    quantity: number;
 }
 
 export interface ProductProps {
@@ -37,21 +38,20 @@ const Product: React.FC<ProductProps> = ({ profile }) => {
 
     useEffect(() => {
       if (profile) {
-     fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${profile.id}`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log("OS DADOS VIERAM", data.cardapio)
-                setTimeout(() => {
-                  setRestaurantData(data.cardapio)
-                  setIsLoading(false)
-                }, 0)
+        fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${profile.id}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log("OS DADOS VIERAM", data.cardapio)
+                    setTimeout(() => {
+                      setRestaurantData(data.cardapio)
+                      setIsLoading(false)
+                    }, 0)
+                })
+                .catch((error) => {
+                console.error('Erro ao buscar dados da API', error)
             })
-            .catch((error) => {
-            console.error('Erro ao buscar dados da API', error)
-        })
-      }
-
-    }, [profile])
+          }
+    }, [])
     // const pizzarias = restaurantData.filter((restaurant) => restaurant.tipo === 'pizzaria');
     return (
         <>

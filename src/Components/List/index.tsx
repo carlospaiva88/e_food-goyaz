@@ -57,7 +57,7 @@ const List = () => {
               </span>
               <Tag size='big'>{item.tipo}</Tag>
           <TitleCard>
-            <h2>{index + 1} - {item.titulo}</h2>
+            <h2>{item.titulo}</h2>
             <div>
                 <p>{item.avaliacao}</p>
             <img src={star} alt="" />

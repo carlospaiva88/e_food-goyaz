@@ -1,6 +1,9 @@
 import { PropsWithChildren, useState, useEffect } from "react"
 import { ModalContent, ModalOverlay} from "./styles"
 import { ButtonLight, ButtonModal } from "../Button/styles"
+import { useDispatch, useSelector } from "react-redux"
+import { RootReducer } from "../../store"
+import { add, open } from '../../store/reducers/cart'
 
 interface ModalProps {
   capa: string
@@ -22,9 +25,14 @@ const ModalBox = (
     titulo,
     tabIndex
   }: PropsWithChildren<ModalProps>
-) => {
-  // const modalRef = useRef<HTMLElement | null>(null)
+  ) => {
   const [modalIsOpen, setIsOpen] = useState(false)
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch((open()))
+  }
 
   function openModal() {
     setIsOpen(true)
@@ -32,12 +40,6 @@ const ModalBox = (
   function closeModal() {
     setIsOpen(false)
   }
-
-  useEffect(() => {
-    // if(modalRef !== null){
-    //   (modalRef.current as HTMLElement).focus();
-    // }
-  }, [])
 
   return (
     <div>
@@ -58,7 +60,16 @@ const ModalBox = (
                 <br />
                 Serve: { porcao }
             </p>
-            <ButtonModal>Adicionar ao carrinho - R$ { preco }</ButtonModal>
+            <ButtonModal onClick={() => {
+                dispatch(add({
+                  foto: capa,
+                  id,
+                  titulo,
+                  preco,
+                  quantity: 0
+                }))
+                dispatch(open())
+            }}>Adicionar ao carrinho - R$ { preco }</ButtonModal>
           </div>
         </ModalContent>
       </ModalOverlay>
@@ -68,11 +79,3 @@ const ModalBox = (
 }
 export default ModalBox
 
-
- {/* <Modal
-      isOpen={modalIsOpen}
-      onRequestClose={closeModal}
-      contentLabel="Modal"
-      >
-
-      </Modal> */}

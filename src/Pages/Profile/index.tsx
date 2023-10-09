@@ -28,7 +28,7 @@ const Profile: React.FC<HeroProps>  = ({ profile: profileHero}) => {
 
 
       if (isLoading) {
-        return <h3>Profile not found...</h3>
+        return <h3>Loading...</h3>
       }
 
   return (

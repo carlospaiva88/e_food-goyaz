@@ -29,6 +29,7 @@ export const Card = styled.li`
   grid-template-rows: 217px auto minmax(0, 1fr);
   overflow: hidden;
 
+
   span {
     position: absolute;
     top: 0px;
@@ -39,6 +40,7 @@ export const Card = styled.li`
   > img {
     width: 100%;
     height: 217px;
+    object-fit: cover;
   }
   h2 {
     font-family: Roboto;
