@@ -97,4 +97,8 @@ export const ImgLixeira = styled.div`
   left: 300px;
   top: 68px;
   cursor: pointer;
+
+    button {
+
+    }
   `

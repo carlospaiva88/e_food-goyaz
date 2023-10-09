@@ -20,8 +20,8 @@ const Cart = () => {
     const closeCart = () => {
       dispatch(close())
     }
-    const removeItem = (id: number) => {
-      dispatch((remove(id)))
+    const removeItem = (id: number | string) => {
+      dispatch((remove(Number(id))))
     }
   const getTotalPrice = () => {
     return items.reduce((acumulador, item) => {
@@ -50,7 +50,7 @@ const Cart = () => {
                 <div>{item.quantity}</div>
               }
             <ImgLixeira>
-                <img src={lixeira} alt="Remover"/>
+                <img src={lixeira} alt="Remover" onClick={() => removeItem(item.id)}/>
             </ImgLixeira>
           </CartItem>
           ))}
