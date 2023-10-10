@@ -47,7 +47,6 @@ export const Banner = styled.div`
   img {
     opacity: 0.83;
     filter: brightness(0.45);
-    max-width: 1366px;
     height: 280px;
     width: 100%;
     object-fit: cover;

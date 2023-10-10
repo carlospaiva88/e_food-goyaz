@@ -5,6 +5,7 @@ export const ModalContent = styled.div`
   width: 1024px;
   height: 344px;
   display: flex;
+  align-items: center;
   background-color: ${colors.red};
   color: ${colors.white};
   padding: 30px;
@@ -24,12 +25,12 @@ export const ModalContent = styled.div`
     }
     img {
       object-fit: cover;
-      max-width: 280px;
-      max-height: 280px;
+      width: 280px;
+      height: 280px;
     }
     span {
       position: relative;
-      top: -20px;
+      top: -150px;
       left: 960px;
       cursor: pointer;
 

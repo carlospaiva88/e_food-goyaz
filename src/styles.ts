@@ -22,11 +22,9 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: #FFF8F2;
-    max-width: 1366px;
   }
 
   .container {
-    max-width: 1366px;
     width: 100%;
     margin: 0 auto;
   }

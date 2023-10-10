@@ -11,11 +11,12 @@ function App() {
     <Provider store={store}>
     <BrowserRouter>
       <GlobalStyle />
-      <div className='container'>
-          <RouteS />
-      </div>
-      <Footer />
-      <Cart />
+
+           <RouteS />
+            <Footer />
+            <Cart />
+
+
     </BrowserRouter>
     </Provider>
 
