@@ -11,12 +11,15 @@ export const ModalContent = styled.div`
   padding: 30px;
   border-radius: 5px;
 
-
+    div {
+      margin-left: 24px;
+    }
     p {
       font-family: Roboto;
       font-weight: 400;
       font-size: 14px;
       line-height: 21px;
+
     }
     h2 {
       font-family: Roboto;
@@ -27,6 +30,7 @@ export const ModalContent = styled.div`
       object-fit: cover;
       width: 280px;
       height: 280px;
+
     }
     span {
       position: relative;

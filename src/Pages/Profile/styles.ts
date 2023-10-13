@@ -4,13 +4,15 @@ import { Button } from '../../Components/Button/styles'
 import { breakpoints, colors } from '../../styles'
 
 export const Hero = styled.header`
-  padding: 80px;
+  height: 186px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-image: url(${imgBanner});
   color: ${colors.lightGray};
+
+
 
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -47,9 +49,9 @@ export const Banner = styled.div`
   img {
     opacity: 0.83;
     filter: brightness(0.45);
-    height: 280px;
-    width: 100%;
     object-fit: cover;
+    width: 100%;
+    height: 280px;
 
     @media (max-width: ${breakpoints.tablet}) {
       width: 100%;
