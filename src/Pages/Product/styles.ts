@@ -30,7 +30,7 @@ export const ProfileCard = styled.li`
   color: ${colors.white};
   margin: 5px;
 
-  img {
+  > img {
     width: 100%;
     height: 200px;
     padding: 10px;

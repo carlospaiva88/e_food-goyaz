@@ -11,6 +11,12 @@ export const ModalContent = styled.div`
   padding: 30px;
   border-radius: 5px;
 
+  > img {
+      object-fit: cover;
+      width: 280px;
+      height: 280px;
+
+    }
     div {
       margin-left: 24px;
     }
@@ -26,12 +32,7 @@ export const ModalContent = styled.div`
       font-size: 18px;
       font-weight: 900;
     }
-    img {
-      object-fit: cover;
-      width: 280px;
-      height: 280px;
 
-    }
     span {
       position: relative;
       top: -150px;
