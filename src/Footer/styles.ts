@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import imgBanner from '../assets/images/fundo.png'
-import { breakpoints, colors } from '../styles'
+import { colors } from '../styles'
 
 export const FooterR = styled.footer`
   display: flex;
@@ -21,8 +21,6 @@ export const FooterR = styled.footer`
     text-align: center;
     color: ${colors.red};
     margin: 40px;
-
-
   }
 `
 export const Icons = styled.div`

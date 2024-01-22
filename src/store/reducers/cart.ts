@@ -6,10 +6,23 @@ type Item = Pick<MenuType, "id" | "titulo" | "foto" | "preco" | "quantity">
 type CartState = {
   isOpen: boolean
   items: Item[]
+  checkoutOpen: boolean
 }
 const initialState: CartState = {
+  isOpen: false,
+  checkoutOpen: false,
   items: [],
-  isOpen: false
+}
+export const openCheckout = () => {
+  return {
+    type: 'OPEN_CHECKOUT',
+  }
+}
+
+export const closeCheckout = () => {
+  return {
+    type: 'CLOSE_CHECKOUT',
+  }
 }
 
 const cartSlice = createSlice({
@@ -37,6 +50,27 @@ const cartSlice = createSlice({
     }
   }
 })
+export const cartReducer = (state = initialState, action: { type: any }) => {
+  switch (action.type) {
+    // ... outras cases ...
+
+    case 'OPEN_CHECKOUT':
+      return {
+        ...state,
+        checkoutOpen: true,
+      };
+
+    case 'CLOSE_CHECKOUT':
+      return {
+        ...state,
+        checkoutOpen: false,
+      };
+
+
+    default:
+      return state;
+  }
+}
 
 export const { add, close, open, remove } = cartSlice.actions
 export default cartSlice.reducer

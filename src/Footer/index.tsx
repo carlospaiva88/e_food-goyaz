@@ -17,14 +17,14 @@ const Footer = () => (
             <FaGoogle />
           </div>
           <div>
-             <FaFacebook />
+            <FaFacebook />
           </div>
 
         </Icons>
         <p>
           A efood é uma plataforma para divulgação de estabelecimentos,
-           a responsabilidade pela entrega,
-           qualidade dos produtos é toda do estabelecimento contratado.
+          a responsabilidade pela entrega,
+          qualidade dos produtos é toda do estabelecimento contratado.
         </p>
         </FooterR>
 

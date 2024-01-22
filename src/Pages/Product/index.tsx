@@ -1,4 +1,4 @@
-import Modal from "../../Components/Box"
+import Modal from "../../Components/Modal"
 import { RestaurantType } from "../../Components/List";
 import { ContainerProduct, ProfileCard, ProfileCardList } from './styles'
 import { useEffect, useState } from "react"

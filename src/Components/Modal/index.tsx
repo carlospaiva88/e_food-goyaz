@@ -45,11 +45,8 @@ const ModalBox = (
     <div>
       <ButtonLight onClick={openModal}>Mais detalhes</ButtonLight>
     {modalIsOpen && (
-      <ModalOverlay>
-        <ModalContent /*ref={modalRef}*/ tabIndex={tabIndex} className="content" onBlur={() => {
-          console.log("ACONTECEU UM BLUR");
-          setIsOpen(false);
-        }}>
+      <ModalOverlay onClick={closeModal}>
+        <ModalContent>
           <span onClick={closeModal}>x</span>
           <img src={ capa } alt="" />
           <div key={ id }>

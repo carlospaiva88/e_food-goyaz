@@ -1,24 +1,52 @@
-// import { useDispatch, useSelector } from 'react-redux'
 import { useDispatch, useSelector } from 'react-redux'
 import lixeira from '../../assets/images/lixeira-de-reciclagem 1.png'
-import { CartContainer, CartItem, ImgLixeira, Overlay, Prices, SideBar, TotalPrice } from './styles'
+import { CartItem, ImgLixeira, Prices, TotalPrice } from './styles'
 import { RootReducer } from '../../store'
-import { add, close, remove } from '../../store/reducers/cart'
+import cartReducer, { open, close, remove } from '../../store/reducers/cart';
 import { ButtonLight } from '../Button/styles'
-import { useEffect } from 'react'
- export const formatPrice = (preco = 0) => {
+import { SetStateAction, useEffect, useState } from 'react'
+import AsidePagamento from '../../Pages/Checkout/pagamento'
+import AsideCliente from '../../Pages/Checkout/cliente'
+import AsideAgradecimento from '../../Pages/Checkout/agradeciment'
+import { CartContainer, Overlay, SideBar } from '../../styles'
+
+
+export const formatPrice = (preco = 0) => {
     return new Intl.NumberFormat('pt-Br', {
       style: 'currency',
       currency: 'BRL'
     }).format(preco)
   }
 
+
 const Cart = () => {
     const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+    const [isCheckoutOpen, setCheckoutOpen] = useState(false)
+    const [currentPage, setCurrentPage] = useState('cliente')
     const dispatch = useDispatch()
 
+    const [modalIsOpen, setIsOpen] = useState(false)
+
+    const openModal = () => {
+      setIsOpen(true)
+    }
+    const closeModal = () => {
+      setIsOpen(false)
+    }
+
+    const openCart = () => {
+      console.log('abrindo carrinho..')
+      dispatch(open())
+      setCheckoutOpen(true)
+    }
     const closeCart = () => {
+      console.log('fechando carrinho..')
       dispatch(close())
+      setCheckoutOpen(false)
+
+    }
+    const navigateToPage = (page: SetStateAction<string>) => {
+      setCurrentPage(page)
     }
     const removeItem = (id: number | string) => {
       dispatch((remove(Number(id))))
@@ -34,15 +62,20 @@ const Cart = () => {
   }, [ items ])
 
   return (
-     <CartContainer className={isOpen ? 'is-open' : ''}>
-      <Overlay onClick={closeCart} />
+      <CartContainer className={isOpen ? 'is-open' : ''}>
+      <Overlay  onClick={closeCart}  />
       <SideBar>
+
+      {currentPage === 'cliente' && <AsideCliente isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} closeCart={closeCart}/>}
+      {currentPage === 'pagamento' && <AsidePagamento isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} />}
+      {currentPage === 'agradecimento' && <AsideAgradecimento isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} closeCart={closeCart}  />}
+
         <ul>
           {items.map((item) => (
             <CartItem key={item.id}>
               <img src={item.foto} alt="" />
               <div>
-                 <h2> {item.titulo} </h2>
+                <h2> {item.titulo} </h2>
                 <Prices>R${item.preco}</Prices>
               </div>
               {
@@ -60,8 +93,10 @@ const Cart = () => {
             <h3>Valor Total</h3>
             <h4>{formatPrice(getTotalPrice())}</h4>
         </TotalPrice>
-          <ButtonLight>Continuar com a entrega</ButtonLight>
+
+        <ButtonLight onClick={openCart}>Continuar com a entrega</ButtonLight>
       </SideBar>
+
     </CartContainer>
   )
 }

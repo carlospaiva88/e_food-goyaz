@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+import { ButtonLight } from './Components/Button/styles'
 
 export const colors = {
   red: '#E66767',
@@ -30,5 +31,53 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+`
+export const CartContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: flex-end;
+  z-index: 1;
 
+  &.is-open {
+    display: flex;
+  }
+
+  h2 {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 900px;
+    line-height: 21px;
+    text-align: center;
+    color: ${colors.red};
+    padding-top: 8px;
+    margin-bottom: 16px;
+    color: white;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+
+  }
+`
+export const SideBar = styled.aside`
+  background-color: ${colors.red};
+  z-index: 1;
+  padding: 40px 16px 0 16px;
+  max-width: 360px;
+  width: 100%;
+`
 export default GlobalStyle
