@@ -24,7 +24,8 @@ export const Button = styled.button`
 export const ButtonLight = styled(Button)`
   background-color: ${colors.white};
   color: ${colors.red};
-  width: 304px;
+  max-width: 304px;
+  width: 100%;
   height: 24px;
   padding: 5px;
   text-align: center;
@@ -44,4 +45,20 @@ export const ButtonModal = styled(Button)`
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
+`
+export const ButtonAside = styled.button`
+  background-color: ${colors.white};
+  color: ${colors.red};
+  max-width: 344px;
+  height: 24px;
+  width: 100%;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  margin-bottom: 8px;
+  cursor: pointer;
+
 `

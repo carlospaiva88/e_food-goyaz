@@ -41,6 +41,7 @@ export const Overlay = styled.div`
   opacity: 0.7;
 `
 export const CartContainer = styled.div`
+
   position: fixed;
   top: 0;
   left: 0;
@@ -50,6 +51,8 @@ export const CartContainer = styled.div`
   justify-content: flex-end;
   z-index: 1;
 
+
+
   &.is-open {
     display: flex;
   }
@@ -57,7 +60,7 @@ export const CartContainer = styled.div`
   h2 {
     font-family: Roboto;
     font-size: 18px;
-    font-weight: 900px;
+    font-weight: 900;
     line-height: 21px;
     text-align: center;
     color: ${colors.red};
@@ -73,11 +76,15 @@ export const CartContainer = styled.div`
 
   }
 `
-export const SideBar = styled.aside`
+export const SideBar = styled.div`
+
   background-color: ${colors.red};
   z-index: 1;
   padding: 40px 16px 0 16px;
   max-width: 360px;
   width: 100%;
+  height: 100%;
+
+
 `
 export default GlobalStyle

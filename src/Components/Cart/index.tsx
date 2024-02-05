@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import lixeira from '../../assets/images/lixeira-de-reciclagem 1.png'
 import { CartItem, ImgLixeira, Prices, TotalPrice } from './styles'
 import { RootReducer } from '../../store'
-import cartReducer, { open, close, remove } from '../../store/reducers/cart';
-import { ButtonLight } from '../Button/styles'
+import { open, close, remove } from '../../store/reducers/cart';
+import { ButtonAside } from '../Button/styles'
 import { SetStateAction, useEffect, useState } from 'react'
 import AsidePagamento from '../../Pages/Checkout/pagamento'
 import AsideCliente from '../../Pages/Checkout/cliente'
@@ -68,7 +68,7 @@ const Cart = () => {
 
       {currentPage === 'cliente' && <AsideCliente isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} closeCart={closeCart}/>}
       {currentPage === 'pagamento' && <AsidePagamento isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} />}
-      {currentPage === 'agradecimento' && <AsideAgradecimento isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} closeCart={closeCart}  />}
+      {currentPage === 'agradecimento' && <AsideAgradecimento isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} closeCart={closeCart} orderId={''} />}
 
         <ul>
           {items.map((item) => (
@@ -94,7 +94,7 @@ const Cart = () => {
             <h4>{formatPrice(getTotalPrice())}</h4>
         </TotalPrice>
 
-        <ButtonLight onClick={openCart}>Continuar com a entrega</ButtonLight>
+        <ButtonAside onClick={openCart}>Continuar com a entrega</ButtonAside>
       </SideBar>
 
     </CartContainer>

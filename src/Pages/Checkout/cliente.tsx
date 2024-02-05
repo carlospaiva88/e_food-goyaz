@@ -1,4 +1,6 @@
+import { ButtonAside} from "../../Components/Button/styles";
 import { CartContainer, Overlay, SideBar } from "../../styles";
+import { ContainerAside, DivButton, DivCep, DivCepContainer, DivNumero } from "./styles";
 
 
 interface CheckoutProps {
@@ -8,14 +10,38 @@ interface CheckoutProps {
 }
 
 const AsideCliente: React.FC<CheckoutProps> = ({ isCheckoutOpen, navigateToPage, closeCart}) => {
+
   return isCheckoutOpen ? (
     <div>
       {isCheckoutOpen && (
             <CartContainer className={isCheckoutOpen ? 'is-open' : ''}>
               <Overlay onClick={closeCart} />
               <SideBar>
-                <h2>Checkout is ready to be written</h2>
-                <button onClick={() => navigateToPage('pagamento')}>Ir para o pagamento</button>
+                    <ContainerAside>
+                        <h2>Entrega</h2>
+                        <label>Quem irá receber</label>
+                        <input type="text" />
+                        <label>Endereço</label>
+                        <input type="text" />
+                        <label>Cidade</label>
+                        <input type="text" />
+                          <DivCepContainer>
+                              <DivCep>
+                                <label>Cep</label>
+                                <input type="text" />
+                              </DivCep>
+                              <DivNumero>
+                                <label>Número</label>
+                                <input type="text" />
+                              </DivNumero>
+                          </DivCepContainer>
+                        <label>Complemento</label>
+                        <input type="text" />
+                        <DivButton>
+                          <ButtonAside onClick={() => navigateToPage('pagamento')}>Continuar com o pagamento</ButtonAside>
+                          <ButtonAside onClick={() => navigateToPage('/')}>Voltar para o carrinho</ButtonAside>
+                        </DivButton>
+                    </ContainerAside>
               </SideBar>
             </CartContainer>
       )}
