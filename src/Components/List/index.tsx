@@ -18,6 +18,7 @@ export interface RestaurantType  {
   avaliacao: number
   descricao: string
   capa: string
+  orderId: string
 }
 
 const List = () => {

@@ -14,6 +14,7 @@ interface AgradecimentoAsideProps {
 
 const AsideAgradecimento: React.FC<AgradecimentoAsideProps> = ({ isCheckoutOpen, closeCart }) => {
 const [purchase, { data }] = usePurchaseMutation()
+console.log(data)
 
   return (
             <CartContainer className={isCheckoutOpen ? 'is-open' : ''}>

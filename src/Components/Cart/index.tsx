@@ -3,13 +3,13 @@ import { SetStateAction, useEffect, useState } from 'react'
 
 import lixeira from '../../assets/images/lixeira-de-reciclagem 1.png'
 import { CartItem, ImgLixeira, Prices, TotalPrice } from './styles'
-import { RootReducer } from '../../store'
 import { open, close, remove } from '../../store/reducers/cart';
 import { ButtonAside } from '../Button/styles'
 import AsidePagamento from '../../Pages/Checkout/pagamento'
 import AsideCliente from '../../Pages/Checkout/cliente'
 import AsideAgradecimento from '../../Pages/Checkout/agradeciment'
 import { CartContainer, Overlay, SideBar } from '../../styles'
+import { RootState } from '../../store';
 
 
 export const formatPrice = (preco = 0) => {
@@ -21,7 +21,7 @@ export const formatPrice = (preco = 0) => {
 
 
 const Cart = () => {
-    const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+    const { isOpen, items } = useSelector((state: RootState) => state.cart)
     const [isCheckoutOpen, setCheckoutOpen] = useState(false)
     const [currentPage, setCurrentPage] = useState('cliente')
     const dispatch = useDispatch()

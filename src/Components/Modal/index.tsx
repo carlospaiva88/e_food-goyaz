@@ -1,8 +1,8 @@
-import { PropsWithChildren, useState, useEffect } from "react"
+import { PropsWithChildren, useState } from "react"
 import { ModalContent, ModalOverlay} from "./styles"
 import { ButtonLight, ButtonModal } from "../Button/styles"
 import { useDispatch, useSelector } from "react-redux"
-import { RootReducer } from "../../store"
+import { RootState } from "../../store"
 import { add, open } from '../../store/reducers/cart'
 
 interface ModalProps {
@@ -27,7 +27,7 @@ const ModalBox = (
   ) => {
   const [modalIsOpen, setIsOpen] = useState(false)
   const dispatch = useDispatch()
-  const { items } = useSelector((state: RootReducer) => state.cart)
+  const { items } = useSelector((state: RootState) => state.cart)
 
   const openCart = () => {
     dispatch((open()))
