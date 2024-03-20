@@ -5,7 +5,7 @@ import { ContainerAside, DivButton, DivCard, DivCardCVV, DivCardMonth, DivCardNu
 import axios from "axios";
 
 interface AsidePagamentoProps{
-  navigateToPage: (page: string) => void
+  navigateToPage: (page: string, orderId?: string) => void
   isCheckoutOpen: boolean
 }
 
@@ -17,7 +17,7 @@ const AsidePagamento: React.FC<AsidePagamentoProps> = ({ navigateToPage, isCheck
     mesVencimento: '',
     anoVencimento: '',
   })
-  const [orderID, setOrderID] = useState<string | null>(null);
+
 
   const handleFinalizarPagamento = async () => {
     try {
@@ -49,15 +49,7 @@ const AsidePagamento: React.FC<AsidePagamentoProps> = ({ navigateToPage, isCheck
             }
           }
         }
-      };
-
-      const response = await axios.post('https://fake-api-tau.vercel.app/api/efood/checkout', data)
-      const orderIdFromResponse = response.data.orderId
-
-      setOrderID(orderIdFromResponse)
-
-      console.log(response.data.orderId)
-      console.log(orderIdFromResponse)
+      }
 
       navigateToPage('agradecimento')
 

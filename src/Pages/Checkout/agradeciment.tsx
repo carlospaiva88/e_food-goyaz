@@ -1,22 +1,19 @@
 import { Link } from "react-router-dom"
+import { usePurchaseMutation } from "../../services/api"
 import { CartContainer, Overlay, SideBar } from "../../styles"
 import { ContainerAgradecimento, DivAgradecimento, DivButton } from "./styles"
 import { ButtonAside } from "../../Components/Button/styles"
-import { useEffect, useState } from "react"
+
 
 
 interface AgradecimentoAsideProps {
   isCheckoutOpen: boolean
   navigateToPage: (page: string) => void
   closeCart: any
-  orderId: string
 }
-const AsideAgradecimento: React.FC<AgradecimentoAsideProps> = ({ isCheckoutOpen, navigateToPage, closeCart, orderId }) => {
-  const [localOrderId, setLocalOrderId] = useState<string>('');
 
-  useEffect(() => {
-    setLocalOrderId(orderId);
-  }, [orderId]);
+const AsideAgradecimento: React.FC<AgradecimentoAsideProps> = ({ isCheckoutOpen, closeCart }) => {
+const [purchase, { data }] = usePurchaseMutation()
 
   return (
             <CartContainer className={isCheckoutOpen ? 'is-open' : ''}>
@@ -24,7 +21,8 @@ const AsideAgradecimento: React.FC<AgradecimentoAsideProps> = ({ isCheckoutOpen,
               <SideBar>
                 <div className="content-wrapper">
                   <ContainerAgradecimento>
-                    <span>Pedido realizado - {localOrderId} </span>
+                    <span>Pedido realizado - </span>
+                    <p>Seu código de pedido: {data?.orderId} </p>
                       <DivAgradecimento>
                           <p>
                           Estamos felizes em informar que seu pedido já está em processo de preparação e, em breve, será entregue no endereço fornecido.

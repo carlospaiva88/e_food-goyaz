@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { MenuType } from "../../Pages/Product"
 
+
 type Item = Pick<MenuType, "id" | "titulo" | "foto" | "preco" | "quantity">
 
 type CartState = {
@@ -24,7 +25,6 @@ export const closeCheckout = () => {
     type: 'CLOSE_CHECKOUT',
   }
 }
-
 const cartSlice = createSlice({
   name: 'cart',
   initialState,

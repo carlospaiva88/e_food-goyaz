@@ -1,12 +1,13 @@
+import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
 import { Card, CardList, ContainerCard, TextCard, TitleCard, DetailsContainer } from './styles'
-import sushi from '../../assets/images/sushi.png'
-import pasta from '../../assets/images/pasta.png'
 import star from '../../assets/images/favorite-star.png'
 import { Button } from '../Button/styles'
 import Tag from '../../Tags'
-import { Link, useRoutes, useNavigation, useNavigate } from 'react-router-dom'
+
 import { MenuType } from '../../Pages/Product'
-import { useEffect, useState } from 'react'
+
 
 export interface RestaurantType  {
   id: number
@@ -45,7 +46,7 @@ const List = () => {
       <CardList>
 
         {
-        isLoading === true ? <div>Carregando</div> : restaurantData.map((item, index) => (
+        isLoading === true ? <div>Carregando</div> : restaurantData.map((item) => (
           <Card key={item.id}>
             <img src={item.capa}  alt={item.titulo} />
               <span>
@@ -74,31 +75,6 @@ const List = () => {
         </Card>
         ))
         }
-
-
-         {/* <Card>
-            <img src={pasta} alt="sushi" />
-              <Tag size='big'>Italiana</Tag>
-          <TitleCard>
-            <h2>La Dolce Vita Trattoria</h2>
-            <div>
-                <p>4.9</p>
-            <img src={star} alt="" />
-            </div>
-          </TitleCard>
-          <div>
-            <TextCard>
-            A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você!
-            Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis,
-            tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e
-            sabor inesquecível. Peça já!
-            </TextCard>
-            <Link to='/profile'>
-              <Button>Saiba mais</Button>
-            </Link>
-          </div>
-        </Card> */}
-
       </CardList>
     </ContainerCard>
   )

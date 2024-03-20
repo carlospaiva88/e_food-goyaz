@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { SetStateAction, useEffect, useState } from 'react'
+
 import lixeira from '../../assets/images/lixeira-de-reciclagem 1.png'
 import { CartItem, ImgLixeira, Prices, TotalPrice } from './styles'
 import { RootReducer } from '../../store'
 import { open, close, remove } from '../../store/reducers/cart';
 import { ButtonAside } from '../Button/styles'
-import { SetStateAction, useEffect, useState } from 'react'
 import AsidePagamento from '../../Pages/Checkout/pagamento'
 import AsideCliente from '../../Pages/Checkout/cliente'
 import AsideAgradecimento from '../../Pages/Checkout/agradeciment'
@@ -68,7 +69,7 @@ const Cart = () => {
 
       {currentPage === 'cliente' && <AsideCliente isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} closeCart={closeCart}/>}
       {currentPage === 'pagamento' && <AsidePagamento isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} />}
-      {currentPage === 'agradecimento' && <AsideAgradecimento isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} closeCart={closeCart} orderId={''} />}
+      {currentPage === 'agradecimento' && <AsideAgradecimento isCheckoutOpen={isCheckoutOpen} navigateToPage={navigateToPage} closeCart={closeCart}/>}
 
         <ul>
           {items.map((item) => (

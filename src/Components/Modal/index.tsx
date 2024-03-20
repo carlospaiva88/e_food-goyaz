@@ -23,7 +23,6 @@ const ModalBox = (
     porcao,
     preco,
     titulo,
-    tabIndex
   }: PropsWithChildren<ModalProps>
   ) => {
   const [modalIsOpen, setIsOpen] = useState(false)
