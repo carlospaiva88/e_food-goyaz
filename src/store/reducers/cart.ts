@@ -1,42 +1,27 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { MenuType } from "../../Pages/Product"
-
-
-type Item = Pick<MenuType, "id" | "titulo" | "foto" | "preco" | "quantity">
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { DishItem } from '../../pages/Home'
 
 type CartState = {
+  items: DishItem[]
   isOpen: boolean
-  items: Item[]
-  checkoutOpen: boolean
-}
-const initialState: CartState = {
-  isOpen: false,
-  checkoutOpen: false,
-  items: [],
-}
-export const openCheckout = () => {
-  return {
-    type: 'OPEN_CHECKOUT',
-  }
 }
 
-export const closeCheckout = () => {
-  return {
-    type: 'CLOSE_CHECKOUT',
-  }
+const initialState: CartState = {
+  items: [],
+  isOpen: false
 }
+
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    add: (state, action: PayloadAction<Item>) => {
-      const restaurant = state.items.find((item) => item.id === action.payload.id)
+    add: (state, action: PayloadAction<DishItem>) => {
+      const prato = state.items.find((item) => item.id === action.payload.id)
 
-      if (!restaurant) {
-        action.payload.quantity = 1
+      if (!prato) {
         state.items.push(action.payload)
       } else {
-          restaurant.quantity += 1;
+        alert('O prato já está no carrinho')
       }
     },
     remove: (state, action: PayloadAction<number>) => {
@@ -47,30 +32,12 @@ const cartSlice = createSlice({
     },
     close: (state) => {
       state.isOpen = false
+    },
+    clear: (state) => {
+      state.items = []
     }
   }
 })
-export const cartReducer = (state = initialState, action: { type: any }) => {
-  switch (action.type) {
-    // ... outras cases ...
 
-    case 'OPEN_CHECKOUT':
-      return {
-        ...state,
-        checkoutOpen: true,
-      };
-
-    case 'CLOSE_CHECKOUT':
-      return {
-        ...state,
-        checkoutOpen: false,
-      };
-
-
-    default:
-      return state;
-  }
-}
-
-export const { add, close, open, remove } = cartSlice.actions
+export const { add, open, close, remove, clear } = cartSlice.actions
 export default cartSlice.reducer
