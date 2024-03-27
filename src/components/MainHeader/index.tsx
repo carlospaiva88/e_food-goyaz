@@ -1,12 +1,16 @@
 import logo from '../../assets/images/logo.png'
 import backImage from '../../assets/images/fundo.png'
 import { Image } from './styles'
+import { Link } from 'react-router-dom'
 
 export const HeaderPrincipal = () => (
   <Image style={{ backgroundImage: `url(${backImage})` }}>
     <div className="container">
       <div>
-        <img src={logo} alt="logo efood" />
+        <Link to={'/'}>
+          <img src={logo} alt="logo efood" />
+        </Link>
+
       </div>
       <h1>
         Viva experiências gastronômicas
