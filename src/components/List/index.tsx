@@ -1,9 +1,9 @@
-import DishCard from '../DishCard'
+import DishCard from '../Product'
 import { CardapioList, MenuItem } from './styles'
-import { DishItem } from '../../pages/Home'
+import { ProductItem } from '../../pages/Home'
 
 export type Props = {
-  dishes: DishItem[]
+  dishes: ProductItem[]
 }
 
 const MenuLista = ({ dishes }: Props) => (

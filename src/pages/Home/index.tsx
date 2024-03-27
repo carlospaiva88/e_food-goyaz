@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import Header from '../../components/Header'
+import Header from '../../components/MainHeader'
 import Restaurants from '../../components/Restaurants'
 
-export interface DishItem {
+export interface ProductItem {
   foto: string
   preco: number
   id: number
@@ -19,7 +19,7 @@ export type Restaurant = {
   avaliacao: number
   descricao: string
   capa: string
-  cardapio: DishItem[]
+  cardapio: ProductItem[]
 }
 
 const Home = () => {

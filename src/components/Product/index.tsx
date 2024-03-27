@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import close from '../../assets/images/close.png'
 
 import { add, open } from '../../store/reducers/cart'
-import { DishItem } from '../../pages/Home'
+import { ProductItem } from '../../pages/Home'
 
 import { Button } from '../../styles'
 import * as S from './styles'
@@ -16,7 +16,7 @@ type Props = {
   name: string
   description: string
   portion: string
-  dish: DishItem
+  dish: ProductItem
 }
 
 type ModalState = {
@@ -30,7 +30,7 @@ export const formatPrice = (preco = 0) => {
   }).format(preco)
 }
 
-const DishCard = ({
+const Product = ({
   name,
   description,
   image,
@@ -98,4 +98,4 @@ const DishCard = ({
   )
 }
 
-export default DishCard
+export default Product

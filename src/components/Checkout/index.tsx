@@ -9,7 +9,7 @@ import trashBin from '../../assets/images/trash.png'
 
 import { RootReducer } from '../../store'
 import { clear, close, remove } from '../../store/reducers/cart'
-import { formatPrice } from '../DishCard'
+import { formatPrice } from '../Product'
 import { usePurchaseMutation } from '../../services/api'
 
 import { Button } from '../../styles'
@@ -267,34 +267,36 @@ const Cart = () => {
                   />
                 </S.InputGroup>
                 <S.Row>
-                  <S.InputGroup>
-                    <label htmlFor="cep">CEP</label>
-                    <ReactInputMask
-                      id="cep"
-                      name="cep"
-                      type="text"
-                      value={form.values.cep}
-                      onChange={form.handleChange}
-                      onBlur={form.handleBlur}
-                      className={checkInput('cep') ? 'error' : ''}
-                      mask="99999-999"
-                      maskChar={''}
-                    />
-                  </S.InputGroup>
-                  <S.InputGroup>
-                    <label htmlFor="houseNumber">Número</label>
-                    <ReactInputMask
-                      id="houseNumber"
-                      name="houseNumber"
-                      type="text"
-                      value={form.values.houseNumber}
-                      onChange={form.handleChange}
-                      onBlur={form.handleBlur}
-                      className={checkInput('houseNumber') ? 'error' : ''}
-                      mask="9999"
-                      maskChar=""
-                    />
-                  </S.InputGroup>
+                <S.InputGroup>
+                  <S.AddressInputs>
+                    <S.InputContainer>
+                      <S.Label htmlFor="cep">CEP</S.Label>
+                      <ReactInputMask
+                        id="cep"
+                        name="cep"
+                        type="text"
+                        value={form.values.cep}
+                        onChange={form.handleChange}
+                        onBlur={form.handleBlur}
+                        className={checkInput('cep') ? 'error' : ''}
+                        mask="99999-999"
+                        maskChar={''}
+                      />
+                    </S.InputContainer>
+                    <S.InputContainer>
+                      <S.Label htmlFor="houseNumber">Número</S.Label>
+                      <input
+                        id="houseNumber"
+                        name="houseNumber"
+                        type="text"
+                        value={form.values.houseNumber}
+                        onChange={form.handleChange}
+                        onBlur={form.handleBlur}
+                        className={checkInput('houseNumber') ? 'error' : ''}
+                      />
+                    </S.InputContainer>
+                  </S.AddressInputs>
+                </S.InputGroup>
                 </S.Row>
                 <S.InputGroup>
                   <label htmlFor="complement">Complemento (opcional)</label>
@@ -374,35 +376,40 @@ const Cart = () => {
                   </S.InputGroup>
                 </S.Row>
                 <S.Row>
-                  <S.InputGroup>
-                    <label htmlFor="expireMonth">Mês do vencimento</label>
-                    <ReactInputMask
-                      id="expireMonth"
-                      name="expireMonth"
-                      type="text"
-                      value={form.values.expireMonth}
-                      onChange={form.handleChange}
-                      onBlur={form.handleBlur}
-                      className={checkInput('expireMonth') ? 'error' : ''}
-                      mask="99"
-                      maskChar={''}
-                    />
-                  </S.InputGroup>
-                  <S.InputGroup>
-                    <label htmlFor="expireYear">Ano de vencimento</label>
-                    <ReactInputMask
-                      id="expireYear"
-                      name="expireYear"
-                      type="text"
-                      value={form.values.expireYear}
-                      onChange={form.handleChange}
-                      onBlur={form.handleBlur}
-                      className={checkInput('expireYear') ? 'error' : ''}
-                      mask="99"
-                      maskChar={''}
-                    />
-                  </S.InputGroup>
-                </S.Row>
+  <S.InputGroup>
+    <label htmlFor="expireMonth">Mês do vencimento</label>
+    <S.ExpireInputs>
+      <ReactInputMask
+        id="expireMonth"
+        name="expireMonth"
+        type="text"
+        value={form.values.expireMonth}
+        onChange={form.handleChange}
+        onBlur={form.handleBlur}
+        className={checkInput('expireMonth') ? 'error' : ''}
+        mask="99"
+        maskChar={''}
+      />
+    </S.ExpireInputs>
+  </S.InputGroup>
+
+  <S.InputGroup>
+    <label htmlFor="expireYear">Ano do vencimento</label>
+    <S.ExpireInputs>
+      <ReactInputMask
+        id="expireYear"
+        name="expireYear"
+        type="text"
+        value={form.values.expireYear}
+        onChange={form.handleChange}
+        onBlur={form.handleBlur}
+        className={checkInput('expireYear') ? 'error' : ''}
+        mask="99"
+        maskChar={''}
+      />
+    </S.ExpireInputs>
+  </S.InputGroup>
+</S.Row>
                 <Button
                   title="Clique aqui para finalizar a compra"
                   type="submit"

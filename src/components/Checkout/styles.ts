@@ -130,12 +130,15 @@ export const DeliverPayment = styled.div`
 `
 
 export const InputGroup = styled.div`
+
+
   label {
     font-size: 14px;
     font-weight: bold;
     display: block;
     color: ${colors.beige};
     margin-top: 8px;
+    margin-right: 8px;
   }
 
   input {
@@ -146,6 +149,7 @@ export const InputGroup = styled.div`
     margin-top: 8px;
     font-weight: bold;
     font-size: 14px;
+    flex-grow: 1;
 
     &.error {
       border: 2px solid red;
@@ -162,7 +166,52 @@ export const InputGroup = styled.div`
     width: 100%;
   }
 `
+export const ExpireInputs = styled.div`
+  display: flex;
+  justify-content: space-between;
 
+  input {
+    flex-grow: 1;
+    margin-right: 8px;
+  }
+`
+
+export const ExpireLabel = styled.label`
+  font-size: 14px;
+  font-weight: bold;
+  color: ${colors.beige};
+  margin-bottom: 8px;
+`;
+export const AddressInputs = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 34px;
+`;
+
+export const Input = styled.input`
+  width: 155px;
+  height: 56px;
+  background-color: ${colors.beige};
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+
+  &.error {
+    border: 2px solid red;
+  }
+`
+
+export const Label = styled.label`
+  font-size: 14px;
+  font-weight: bold;
+  color: ${colors.beige};
+
+`
 export const ErrorText = styled.p`
   color: ${colors.beige};
   display: none;

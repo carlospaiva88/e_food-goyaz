@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Banner from '../../components/Banner'
-import HeaderSec from '../../components/HeaderSec'
-import MenuLista from '../../components/MenuList'
-import Cart from '../../components/Cart'
+import HeaderSec from '../../components/Header'
+import MenuLista from '../../components/List'
+import Cart from '../../components/Checkout'
 import { Restaurant } from '../Home'
 
 const RestaurantePage = () => {
