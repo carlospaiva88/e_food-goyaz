@@ -1,18 +1,13 @@
-import {  Routes, Route } from 'react-router-dom'
-import Home from './Pages/Home'
-import Product from './Pages/Product'
-import Profile from './Pages/Profile'
-import AsidePagamento from './Pages/Checkout/pagamento'
+import { Routes, Route } from 'react-router-dom'
 
-export const RouteS = () => (
+import Home from './pages/Home'
+import RestaurantePage from './pages/RestaurantePage'
+
+const Rotas = () => (
   <Routes>
-
-    <Route path='/' element={<Home />}></Route>
-    <Route path='/profile/:id' element={<Profile profile={null} />}></Route>
-    <Route path='/product/:id' element={<Product profile={null} />}></Route>
-    <Route path='/agradecimento' element={<AsidePagamento navigateToPage={function (page: string): void {
-      throw new Error('Function not implemented.')
-    } } isCheckoutOpen={false}/>}></Route>
-
+    <Route path="/" element={<Home />} />
+    <Route path="/restaurant/:id" element={<RestaurantePage />} />
   </Routes>
 )
+
+export default Rotas
